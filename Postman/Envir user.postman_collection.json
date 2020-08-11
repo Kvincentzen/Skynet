@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "91a4206e-5335-40b5-abed-504a84f03ad4",
+		"name": "Envir user",
+		"description": "arbejdsmilømåler api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Role\": \"Admin\",\n\t\"Location\":\"Ballerup\",\n\t\"Username\": \"Mikkel\",\n\t\"Pw\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44395/api/user/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44395",
+					"path": [
+						"api",
+						"user",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post user (first succesful response) - cannot see in cloud",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Role\": \"User\",\n\t\"Location\":\"Ballerup\",\n\t\"Username\": \"Mikkel02\",\n\t\"Pw\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44395/api/user/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44395",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Location",
+							"value": "https://localhost:44395/api/User/5eeb5575e4fd8b025025f676"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Jun 2020 11:52:22 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"5eeb5575e4fd8b025025f676\",\n    \"role\": \"User\",\n    \"location\": \"Ballerup\",\n    \"username\": \"Mikkel02\",\n    \"pw\": \"1234\"\n}"
+				}
+			]
+		},
+		{
+			"name": "https://localhost:44395/api/user/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44395/api/user/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44395",
+					"path": [
+						"api",
+						"user",
+						""
+					]
+				},
+				"description": "get users"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
