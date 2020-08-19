@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Envir.Models;
 using Envir.Services;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 namespace Envir.Controllers
 {
@@ -17,7 +18,7 @@ namespace Envir.Controllers
         {
             _userService = userService;
         }
-
+        [EnableCors("skynetpolicy")]
         [HttpGet]
         public ActionResult<List<User>> Get() => _userService.Get();
 

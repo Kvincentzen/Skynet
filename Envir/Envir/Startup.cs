@@ -13,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using Envir.Models;
 using Envir.Services;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Cors;
+
 
 namespace Envir
 {
@@ -37,9 +39,15 @@ namespace Envir
 
             services.AddSingleton<UserService>();
 
-            services.AddControllers();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("skynetpolicy", builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
 
-            services.AddCors();
+            services.AddControllers();
 
             services.AddMvc(MvcOptions => MvcOptions.EnableEndpointRouting = false);
         }
@@ -47,10 +55,10 @@ namespace Envir
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
-            app.UseCors(builder => builder
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
+            app.UseCors(builder =>
+            {
+                builder.WithOrigins("http://localhost:4200");
+            });
 
             app.UseMvc();
         }
