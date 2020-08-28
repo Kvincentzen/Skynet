@@ -7,8 +7,8 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-	//	private usersUrl = 'https://localhost:5001/api/User';
-	private usersUrl = 'https://localhost:44395/api/User';
+		private usersUrl = 'https://localhost:5001/api/User';
+	//private usersUrl = 'https://localhost:44395/api/User';
   constructor(
   	private http: HttpClient) {
   	 }
