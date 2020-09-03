@@ -8,6 +8,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
